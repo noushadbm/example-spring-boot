@@ -1,12 +1,12 @@
 # Build stage
-FROM eclipse-temurin:17-jdk-alpine AS builder
+FROM container-registry.oracle.com/graalvm/jdk-community:17.0.9 AS builder
 
 WORKDIR /app
 COPY . .
 RUN ./mvnw package
 
 # Run stage
-FROM eclipse-temurin:17-jdk-alpine AS runner
+FROM container-registry.oracle.com/graalvm/jdk-community:17.0.9 AS runner
 
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
