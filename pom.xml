@@ -28,18 +28,12 @@
                 <dependency>
                         <groupId>org.postgresql</groupId>
                         <artifactId>r2dbc-postgresql</artifactId>
-                        <version>1.0.2.RELEASE</version>
+                        <version>1.0.7.RELEASE</version>
                 </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-logging</artifactId>
-			<scope>provided</scope> <!-- Exclude Logback logging starter -->
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
