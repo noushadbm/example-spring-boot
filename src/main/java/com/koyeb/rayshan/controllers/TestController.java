@@ -26,6 +26,7 @@ public class TestController {
     @GetMapping("/test2")
     public Mono<String> test2() {
         log.info("Request test2 received >>>>>>");
+        log.info("NEON_DB_USERNAME: {}", System.getEnv("NEON_DB_USERNAME"));
         return service.getTestResult();
     }
 }
