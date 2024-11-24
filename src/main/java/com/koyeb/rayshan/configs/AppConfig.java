@@ -10,4 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     @Value("${spring.r2dbc.username}")
     private String neonDbUsername;
+
+    @Value("${app.config.security.jwt-secret}")
+    private String jwtSecret;
 }
