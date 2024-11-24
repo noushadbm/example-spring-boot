@@ -29,7 +29,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeExchange(exchanges -> exchanges
-                        .anyExchange().permitAll()
+                        .pathMatchers("/api/v1/authenticate", "/api/v1/test").permitAll()
+                        .anyExchange().authenticated()
                 )
                 .addFilterAt(jwtSecurityFilter, SecurityWebFiltersOrder.AUTHENTICATION)
                 .httpBasic(httpBasic -> httpBasic.disable())

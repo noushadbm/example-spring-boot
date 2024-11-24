@@ -24,20 +24,13 @@ public class ExpenseController {
         this.authService = authService;
     }
 
-    @GetMapping("/")
-    public Mono<String> hello() {
-        log.info("Request received >>>>>>");
-        return service.getTestResult();
-    }
-
-    @GetMapping("/test2")
+    @GetMapping("/test")
     public Mono<String> test2() {
-        log.info("Request test2 received >>>>>>");
-        //log.info("NEON_DB_USERNAME: {}", System.getenv("NEON_DB_USERNAME"));
-        return service.getTestResult();
+        log.info("===> Test request");
+        return Mono.just("pass");
     }
 
-    @GetMapping("/test3")
+    @GetMapping("/list")
     public Mono<Page<ExpenseEntity>> getExpensesPaged() {
         log.info("getExpensesPaged >>>>>>");
         Pageable pageable = Pageable.ofSize(100);
